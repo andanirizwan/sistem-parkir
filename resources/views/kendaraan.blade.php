@@ -5,9 +5,10 @@
 <table id="kendaraan" class="table table-striped table-bordered">
 	<thead>
 		<th>#</th>
-		<th>no_kendaraan</th>
+		<th>no kendaraan</th>
 		<th>masuk</th>
 		<th>keluar</th>
+		<th>action</th>
 	</thead>
 
 
@@ -29,6 +30,8 @@
                   { data: 'no_kendaraan', name: 'no_kendaraan' },
                   { data: 'masuk', name: 'masuk' },
                   { data: 'keluar', name: 'keluar' },
+                  { data: 'action', name: 'action', orderable: false, searchable: false}
+                  
               ]
           });
       });

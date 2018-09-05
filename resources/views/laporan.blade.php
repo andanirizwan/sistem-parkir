@@ -1,4 +1,4 @@
-@extends('layout.template');
+@extends('layout.template')
 
 @section('content')
 <table id="tableparkir" class="table table-striped table-bordered">

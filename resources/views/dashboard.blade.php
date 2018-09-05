@@ -1,4 +1,4 @@
-@extends('layout.template');
+@extends('layout.template')
 
 @section('content2')
 
@@ -44,5 +44,11 @@
 
                       <center><button type="submit" name="submit" class="btn btn-success">Tambah</button></center>
                     </form>
+
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 
 @endsection

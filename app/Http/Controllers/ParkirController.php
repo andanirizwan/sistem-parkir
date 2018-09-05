@@ -28,11 +28,19 @@ class ParkirController extends Controller
     		'masuk'=> $request->masuk,
     		'keluar'=> $request->keluar
     	]);
-    	return redirect('/parkir');
+    	return redirect('/parkir')->with('status', 'Data tersimpan');
     }
     function json_kendaraan()
     {
-         return Datatables::of(ParkirModel::all())->make(true);
+         // return Datatables::of(ParkirModel::all())->make(true);
+
+        $parkir = ParkirModel::select(['id', 'no_kendaraan', 'masuk', 'keluar']);
+
+        return Datatables::of($parkir)
+            ->addColumn('action', function ($parkir) {
+                return '<a href="kendaraan/'.$parkir->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            })
+            ->make(true);
 
     }
     function kendaraan()

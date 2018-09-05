@@ -16,7 +16,7 @@
     <!-- datepicker -->
     <link href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- datatable -->
-    <link href="{{ asset('vendors/datatable/datatable.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/datatables/datatables.min.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('vendors/css/custom.css') }}" rel="stylesheet">
@@ -202,25 +202,12 @@
     <script src="{{ asset('vendors/nprogress/nprogress.js') }}"></script>
      <!-- datepicker -->
     <script src="{{ asset('vendors/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
-    {{--  <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-            });
-            $(function () {
-                $('#datetimepicker4').datetimepicker({
-                    format: 'LT'
-                });
-            });
-     </script> --}}
-
      <!-- datatable -->
     <script src="{{ asset('vendors/datatables/datatables.min.js') }}"></script>
     <script type="text/javascript">
-      $(document).ready( function () {
-        $('#tableparkir').DataTable();
-    } );
+        $(document).ready( function () {
+          $('#tableparkir').DataTable();
+      } );
     </script>
     @stack('scripts')
     
