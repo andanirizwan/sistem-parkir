@@ -12,6 +12,7 @@
 </div>
 
 @endsection
+
 @section('content')
 <form class="form-horizontal form-label-left" method="post" action="/parkir/simpan"> 
 
@@ -45,10 +46,14 @@
                       <center><button type="submit" name="submit" class="btn btn-success">Tambah</button></center>
                     </form>
 
-@if (session('status'))
+
+ @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
     </div>
 @endif
 
+
 @endsection
+
+

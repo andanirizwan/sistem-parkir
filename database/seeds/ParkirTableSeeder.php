@@ -13,11 +13,12 @@ class ParkirTableSeeder extends Seeder
     public function run()
     {
     	$faker = Faker::create();
-    	for ($i=0; $i < 500 ; $i++) { 
+    	for ($i=0; $i < 10 ; $i++) { 
 	    		DB::table('tb_parkir')->insert([
 	            'no_kendaraan' => str_random(6),
 	            'masuk' => $faker->time,
 	            'keluar' => $faker->time,
+                'selisih' => $faker->randomDigit,
 	        ]);
     	}
         

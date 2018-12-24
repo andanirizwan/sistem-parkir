@@ -53,7 +53,7 @@
                 <h3>Parkir</h3>
                 <ul class="nav side-menu">
                   <li><a href="/parkir"><i class="fa fa-user"></i> Dashboard </a></li>
-                  <li><a href="/parkir/kendaraan"><i class="fa fa-car"></i> Kendaraan </a></li>
+                  <li><a href="/parkir/kendaraan"><i class="fa fa-car"></i> kendaraan </a></li>
                   <li><a href="/parkir/laporan"><i class="fa fa-list"></i> Laporan </a></li>
                 </ul>
               </div>

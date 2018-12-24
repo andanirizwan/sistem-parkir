@@ -14,8 +14,8 @@
 
 Route::get('/parkir', 'ParkirController@index');
 Route::post('/parkir/simpan', 'ParkirController@simpan');
-Route::get('/parkir/kendaraan_json', 'ParkirController@json_kendaraan')->name('json');
 Route::get('/parkir/kendaraan', 'ParkirController@kendaraan');
+Route::get('/parkir/kendaraan_json', 'ParkirController@json_kendaraan')->name('json');
 Route::get('/parkir/kendaraan/{id}', 'ParkirController@edit');
 Route::post('/parkir/edit/{id}', 'ParkirController@simpan_kendaraan');
 Route::get('/parkir/hapus/{id}', 'ParkirController@hapus_kendaraan');
