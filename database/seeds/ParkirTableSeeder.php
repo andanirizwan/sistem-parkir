@@ -18,6 +18,8 @@ class ParkirTableSeeder extends Seeder
 	            'no_kendaraan' => str_random(6),
 	            'masuk' => $faker->time,
 	            'keluar' => $faker->time,
+                'jam' => $faker->randomDigit,
+                'menit' => $faker->randomDigit,
                 'selisih' => $faker->randomDigit,
 	        ]);
     	}

@@ -1,0 +1,141 @@
+id,no_kendaraan,jenis_kendaraan,gedung,hari,masuk,keluar,jam,menit,selisih
+,K 6909 YY,Motor,pasca,pertama,8:25,11:30,180,5,185
+,H 7121 SY,Mobil,pasca,pertama,8:25,10:00,60,35,95
+,H 2520 AKC,Motor,pasca,pertama,8:26,12:01,180,35,215
+,H 6478 BFG,Motor,pasca,pertama,8:26,12:02,180,36,216
+,G 5866 BA,Motor,pasca,pertama,8:31,10:15,60,44,104
+,G 5019 MA,Motor,pasca,pertama,8:32,10:15,60,43,103
+,H 3874 VH,Motor,pasca,pertama,8:35,9:11,0,36,36
+,H 2989 RM,Motor,pasca,pertama,8:39,9:00,0,21,21
+,H 4318 TA,Motor,pasca,pertama,8:41,11:30,120,49,169
+,K 2488 CC,Motor,pasca,pertama,8:42,10.03,960,1,961
+,G 4674 FF,Motor,pasca,pertama,8:42,10.03,960,1,961
+,K 4683 AQ,Motor,pasca,pertama,8:43,10.04,960,14,974
+,H 5637 NU,Motor ,pasca,pertama,8:43,11:05,120,22,142
+,H 6844 SH,Motor,pasca,pertama,8:44,13:00,240,16,256
+,H 8872 DA,Mobil,pasca,pertama,9:00,13:43,240,43,283
+,K 3918 US,Motor,pasca,pertama,9:00,11:07,120,7,127
+,H 5295 PY,Motor,pasca,pertama,9:01,11:28,120,27,147
+,K 4304 U,Motor ,pasca,pertama,9:09,11:33,120,24,144
+,H 2594 BG,Motor,pasca,pertama,9:10,12:04,120,54,174
+,H 3366 NS,Motor,pasca,pertama,9:15,12:28,180,13,193
+,H 5879 ABW,Motor,pasca,pertama,9:15,12:28,180,13,193
+,G 2621 CAG,Motor,pasca,pertama,9:15,12:28,180,13,193
+,K 5431 ZN,Motor ,pasca,pertama,9:16,12:29,180,13,193
+,B 277 RDH,Mobil,pasca,pertama,9:21,10:05,0,44,44
+,H 2009 DN,Motor,pasca,pertama,9:21,12:54,180,33,213
+,K 6341 DS,Motor,pasca,pertama,9:29,10:17,0,48,48
+,H 6086 ABE,Motor ,pasca,pertama,9:29,13:35,240,6,246
+,K 3041 AKC,Motor,pasca,pertama,9:31,9:45,0,14,14
+,H 5732 YZ,Motor ,pasca,pertama,9:31,9:59,0,28,28
+,H 6496 AQ,Motor,pasca,pertama,9:32,13:35,240,3,243
+,H 5185 YZ,Motor,pasca,pertama,9:36,9:50,0,14,14
+,H 3778 AWG,Motor,pasca,pertama,9:40,13:46,240,6,246
+,H 3365 UU,Motor,pasca,pertama,9:41,14:00,240,19,259
+,G 9169 PE,Mobil,pasca,pertama,9:45,12:22,120,37,157
+,H 4314 BFG,Motor,pasca,pertama,9:46,10:57,60,11,71
+,H 5268 TM,Motor,pasca,pertama,9:46,11:10,60,24,84
+,H 4876 DG,Motor,pasca,pertama,9:51,12:05,120,14,134
+,R 4035 PS,Motor,pasca,pertama,9:54,10:32,0,38,38
+,K 3067 DC,Motor,pasca,pertama,9:55,10:45,0,50,50
+,H 2933 AUG,Motor,pasca,pertama,10:01,11:31,60,30,90
+,H 5480 FW,Motor,pasca,pertama,10:05,10:06,0,1,1
+,H 5108 HA,Motor ,pasca,pertama,10:15,12:57,120,42,162
+,H 5158 SH,Motor,pasca,pertama,10:16,10:21,0,5,5
+,K 4758 PS,Motor,pasca,pertama,10:16,14:01,180,45,225
+,K 5062 LM,Motor,pasca,pertama,10:18,13:24,180,6,186
+,K 4737 FQ,Motor,pasca,pertama,10:18,10:49,0,31,31
+,H 3874 VH,Motor,pasca,pertama,10:22,14:01,180,39,219
+,K 5224 SR,Motor,pasca,pertama,10:22,11:34,60,12,72
+,K 4707 NJ,Motor,pasca,pertama,10:22,11:57,60,35,95
+,K 4702 LR,Motor,pasca,pertama,10:22,12:15,60,53,113
+,K 2532 DG,Motor,pasca,pertama,10:22,13:19,120,57,177
+,H 5070 DA,Motor,pasca,pertama,10:23,10:45,0,22,22
+,H 2107 HH,Motor,pasca,pertama,10:23,10:45,0,22,22
+,H 8010 QA,Mobil,pasca,pertama,10:26,12:08,60,42,102
+,H 5185 YZ,Motor,pasca,pertama,10:30,10:54,0,24,24
+,K 2929 KP,Motor ,pasca,pertama,10:43,11:54,60,11,71
+,G 3338 LM,Motor,pasca,pertama,10:43,12:36,60,53,113
+,H 5462 ARD,Motor,pasca,pertama,10:45,11:19,0,34,34
+,K 3374 ZC,Motor,pasca,pertama,10:45,11:45,60,0,60
+,H 9387 TR,Mobil,pasca,pertama,10:49,12:09,60,20,80
+,H 2066 HQ,Motor,pasca,pertama,10:49,11:37,0,48,48
+,H 6095 A,Motor ,pasca,pertama,10:55,11:08,0,13,13
+,H 3608 PH,Motor,pasca,pertama,11:01,11:37,0,36,36
+,H 6229 VZ,Motor,pasca,pertama,11:02,11:04,0,2,2
+,H 3476 BWG,Motor,pasca,pertama,11:09,13:31,120,22,142
+,G 5503 WK,Motor ,pasca,pertama,11:20,14:03,120,43,163
+,H 6641 VA,Motor,pasca,pertama,11:20,14:03,120,43,163
+,G 5158 AIQ,Motor,pasca,pertama,11:23,14:04,120,41,161
+,H 6621 A,Motor,pasca,pertama,11:30,14:05,120,35,155
+,AE 5103 NA,Motor,pasca,pertama,11:32,12:39,60,7,67
+,H 8766 KQ,Motor,pasca,pertama,11:50,11:55,0,5,5
+,R 4216 PS,Motor,pasca,pertama,11:50,14:09,120,19,139
+,H 2055 MG,Motor,pasca,pertama,12:00,14:10,120,10,130
+,H 5329 BNG,Motor,pasca,pertama,12:07,14:12,120,5,125
+,AB 3628 XB,Motor,pasca,pertama,12:19,14:13,60,54,114
+,G 3339 NW,Motor,pasca,pertama,12:20,14:20,120,0,120
+,G 6560 NW,Motor,pasca,pertama,12:26,14:20,60,54,114
+,K 6938 AKC,Motor,pasca,pertama,12:26,14:21,60,55,115
+,G 2574 YL,Motor ,pasca,pertama,12:26,12:50,0,24,24
+,K 5768 BM,Motor ,pasca,pertama,12:28,14:25,60,57,117
+,H 5009 KA,Motor,pasca,pertama,12:30,12:49,0,19,19
+,H 4620 RQ,Motor,pasca,pertama,12:30,14:28,60,58,118
+,H 6931 DS,Motor,pasca,pertama,12:38,15:28,120,50,170
+,H 6432 BJ,Motor,pasca,pertama,12:40,14:46,120,6,126
+,K 6496 AMC,Motor,pasca,pertama,12:41,15:46,180,5,185
+,H 5239 AIW,Motor,pasca,pertama,12:42,13:15,0,33,33
+,H 6096 AIG,Motor,pasca,pertama,12:43,14:15,60,32,92
+,G 4190 AW,Motor,pasca,pertama,12:43,15:15,120,32,152
+,G 3470 SZ,Motor,pasca,pertama,12:46,13:48,60,2,62
+,H 4318 TA,Motor,pasca,pertama,12:48,14:48,120,0,120
+,K 5048 NN,Motor,pasca,pertama,12:48,13:52,60,4,64
+,K 5546 OC,Motor,pasca,pertama,12:54,13:57,60,3,63
+,R 6774 QW,Motor ,pasca,pertama,12:57,14:57,120,0,120
+,K 2066 HQ,Motor,pasca,pertama,12:59,15:57,120,58,178
+,H 3862 TE,Motor,pasca,pertama,13:00,15:00,120,0,120
+,G 4768 MI,Motor,pasca,pertama,13:00,13:43,0,43,43
+,K 4969 U,Motor,pasca,pertama,13:00,14:43,60,43,103
+,K 5485 DG,Motor,pasca,pertama,13:01,13:55,0,54,54
+,H 3569 QJ,Motor,pasca,pertama,13:01,14:55,60,54,114
+,H 6401 SM,Motor,pasca,pertama,13:04,15:55,120,51,171
+,K 3270 CU,Motor,pasca,pertama,13:04,13:30,0,26,26
+,G 4768 MI,Motor,pasca,pertama,13:05,14:30,60,25,85
+,H 6461 BLG,Motor,pasca,pertama,13:05,13:07,0,2,2
+,H 2926 AME,Motor,pasca,pertama,13:05,14:46,60,41,101
+,D 5794 ZZ,Motor,pasca,pertama,13:06,15:46,120,40,160
+,H 3162 AMG,Motor,pasca,pertama,13:06,16:46,180,40,220
+,H 8648 VR,Mobil,pasca,pertama,13:08,17:46,240,38,278
+,K 4489 JU,Motor,pasca,pertama,13:09,13:46,0,37,37
+,K 3849 MJ,Motor,pasca,pertama,13:14,14:46,60,32,92
+,G 2360 LT,Motor,pasca,pertama,13:14,15:46,120,32,152
+,K 2601 FQ,Motor,pasca,pertama,13:14,16:46,180,32,212
+,K 2478 JL,Motor,pasca,pertama,13:15,14:28,60,13,73
+,H 2763 JN,Motor,pasca,pertama,13:16,13:24,0,8,8
+,K 2971 MU,Motor,pasca,pertama,13:16,13:17,0,1,1
+,AA 3296 QA,Motor,pasca,pertama,13:18,14:30,60,12,72
+,G 5019 MA,Motor,pasca,pertama,13:18,14:30,60,12,72
+,H 4376 AKG,Motor,pasca,pertama,13:21,15:30,120,9,129
+,H 6417 AU,Motor,pasca,pertama,13:25,16:30,180,5,185
+,K 4519 HC,Motor,pasca,pertama,13:27,14:33,60,6,66
+,K 6811 IC,Motor ,pasca,pertama,13:33,14:39,60,6,66
+,R 4604 UD,Motor,pasca,pertama,13:34,14:40,60,6,66
+,H 6949 NF,Motor ,pasca,pertama,13:36,15:40,120,4,124
+,K 2166 IC,Motor,pasca,pertama,13:37,16:40,180,3,183
+,H 2676 BEG,Motor,pasca,pertama,13:38,14:48,60,10,70
+,G 3136 BV,Motor,pasca,pertama,13:40,14:53,60,13,73
+,H 5988 APE,Motor,pasca,pertama,13:40,15:53,120,13,133
+,K 4016 GQ,Motor,pasca,pertama,13:51,16:53,180,2,182
+,G 6303 SP,Motor,pasca,pertama,13:51,17:53,240,2,242
+,H 8818 AR,Mobil ,pasca,pertama,13:53,18:53,300,0,300
+,H 9275 YH,Mobil,pasca,pertama,14:00,19:53,300,53,353
+,K 4204 LG,Motor,pasca,pertama,14:02,20:53,360,51,411
+,G 3248 IR,Motor,pasca,pertama,14:02,21:53,420,51,471
+,K 2624 GU,Motor,pasca,pertama,14:07,22:53,480,46,526
+,K 2264 Y,Motor,pasca,pertama,14:10,23:53,540,43,583
+,H 2549 ACW,Motor,pasca,pertama,14:10,0:53,600,43,643
+,H 3374 ZC,Motor,pasca,pertama,14:25,1:53,660,28,688
+,H 5295 PY,Motor,pasca,pertama,14:27,2:53,720,26,746
+,K 3918 US,Motor,pasca,pertama,14:44,3:53,780,9,789
+,K 5546 OC,Motor,pasca,pertama,14:50,4:53,840,3,843
+,H 6461 BLG,Motor,pasca,pertama,15:00,5:53,840,53,893

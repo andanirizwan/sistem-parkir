@@ -53,8 +53,15 @@
                 <h3>Parkir</h3>
                 <ul class="nav side-menu">
                   <li><a href="/parkir"><i class="fa fa-user"></i> Dashboard </a></li>
-                  <li><a href="/parkir/kendaraan"><i class="fa fa-car"></i> kendaraan </a></li>
-                  <li><a href="/parkir/laporan"><i class="fa fa-list"></i> Laporan </a></li>
+                  
+                
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-list"></i> Laporan <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/parkir/laporan/motor"><i class="fa fa-motorcycle"></i> Motor </a></li>
+                      <li><a href="/parkir/laporan/mobil"><i class="fa fa-car"></i> Mobil </a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
 
@@ -125,7 +132,7 @@
         <div class="right_col" role="main">
           <div class="">
             
-                @yield('content2');
+                @yield('content2')
               
 
               <!-- <div class="title_right">
@@ -166,8 +173,7 @@
                   </div>
                   <div class="x_content">
                     <!-- content starts here -->
-          @yield('content');
-
+                      @yield('content')
                     <!-- content ends here -->
                   </div>
                 </div>

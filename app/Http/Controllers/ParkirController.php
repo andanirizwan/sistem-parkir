@@ -16,9 +16,11 @@ class ParkirController extends Controller
     function index()
     {
          $total =ParkirModel::all()->count();
+         $motor =ParkirModel::where('jenis_kendaraan' , '=' , 'motor')->count();
+         $mobil =ParkirModel::where('jenis_kendaraan' , '=' , 'mobil')->count();
          $title ='Dashboard';
 
-    	return view('dashboard',['total' => $total,'title' => $title]);
+    	return view('dashboard',['total' => $total,'title' => $title,'motor' => $motor,'mobil' => $mobil]);
     }
     function simpan(Request $request)
     {
@@ -26,14 +28,21 @@ class ParkirController extends Controller
         $date1=date_create($request->keluar);
         $date2=date_create($request->masuk);
         $selisih=date_diff($date1,$date2);
-        $hasil=$selisih->h*60;
+        $jam=$selisih->h*60;
+        $menit=$selisih->i;
+        $hasil=$jam+$menit;
 
     	//insert mass assigment
     	ParkirModel::create([
 
     		'no_kendaraan'=> $request->no_kendaraan,
+            'jenis_kendaraan'=> $request->no_kendaraan,
+            'gedung'=> $request->no_kendaraan,
+            'hari'=> $request->no_kendaraan,
     		'masuk'=> $request->masuk,
     		'keluar'=> $request->keluar,
+            'jam'=> $jam,
+            'menit'=> $menit,
             'selisih'=>$hasil
 
     	]);
@@ -47,7 +56,7 @@ class ParkirController extends Controller
 
         return Datatables::of($parkir)
             ->addColumn('action', function ($parkir) {
-                return '<a href="kendaraan/'.$parkir->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return '<a href="parkir/kendaraan/'.$parkir->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
             })
             ->make(true);
 
@@ -69,10 +78,25 @@ class ParkirController extends Controller
          $kendaraan =ParkirModel::find($id);
          $title ='kendaraan';
 
+         //selisih
+        $date1=date_create($request->keluar);
+        $date2=date_create($request->masuk);
+        $selisih=date_diff($date1,$date2);
+        $jam=$selisih->h*60;
+        $menit=$selisih->i;
+        $hasil=$jam+$menit;
+
          $edit = ParkirModel::where('id', $id)
                     ->update(['no_kendaraan' => $request->no_kendaraan,
+                             'jenis_kendaraan'=> $request->no_kendaraan,
+                             'gedung'=> $request->no_kendaraan,
+                             'hari'=> $request->no_kendaraan,
                              'masuk' => $request->masuk,
-                             'keluar' => $request->keluar]);
+                             'keluar' => $request->keluar,
+                             'jam'=> $jam,
+                             'menit'=> $menit,
+                             'selisih'=>$hasil
+                         ]);
         return redirect('/parkir');
     }
     function hapus_kendaraan(Request $request ,$id )
@@ -84,28 +108,101 @@ class ParkirController extends Controller
          $hapus = ParkirModel::destroy($id);
          return redirect('/parkir');
     }
-    function laporan()
+    function laporan_motor()
     {
-        $title ='Laporan';
+        $title ='Laporan Motor';
 
-    	$selisih1 = ParkirModel::whereBetween('selisih' , [0,30])->count();
-        $selisih2 = ParkirModel::whereBetween('selisih' , [31,60])->count();
-        $selisih3 = ParkirModel::whereBetween('selisih' , [61,90])->count();
-        $selisih4 = ParkirModel::whereBetween('selisih' , [91,120])->count();
-        $selisih5 = ParkirModel::whereBetween('selisih' , [121,150])->count();
-        $selisih6 = ParkirModel::whereBetween('selisih' , [151,180])->count();
-        $selisih7 = ParkirModel::whereBetween('selisih' , [181,220])->count();
-        $selisih8 = ParkirModel::whereBetween('selisih' , [221,250])->count();
-        $selisih9 = ParkirModel::whereBetween('selisih' , [251,280])->count();
-        $selisih10 = ParkirModel::whereBetween('selisih' , [281,320])->count();
-        $selisih11 = ParkirModel::whereBetween('selisih' , [321,350])->count();
-        $selisih12 = ParkirModel::whereBetween('selisih' , [351,380])->count();
-        $selisih13 = ParkirModel::whereBetween('selisih' , [381,420])->count();
-        $selisih14 = ParkirModel::whereBetween('selisih' , [421,450])->count();
-        $selisih15 = ParkirModel::where('selisih' , '>=', 451)->count();
-
+    	$selisih1 = ParkirModel::whereBetween('selisih' , [0,30])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih2 = ParkirModel::whereBetween('selisih' , [31,60])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih3 = ParkirModel::whereBetween('selisih' , [61,90])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih4 = ParkirModel::whereBetween('selisih' , [91,120])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih5 = ParkirModel::whereBetween('selisih' , [121,150])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih6 = ParkirModel::whereBetween('selisih' , [151,180])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih7 = ParkirModel::whereBetween('selisih' , [181,220])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih8 = ParkirModel::whereBetween('selisih' , [221,250])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih9 = ParkirModel::whereBetween('selisih' , [251,280])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih10 = ParkirModel::whereBetween('selisih' , [281,320])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih11 = ParkirModel::whereBetween('selisih' , [321,350])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih12 = ParkirModel::whereBetween('selisih' , [351,380])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih13 = ParkirModel::whereBetween('selisih' , [381,420])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih14 = ParkirModel::whereBetween('selisih' , [421,450])->where('jenis_kendaraan' , '=', 'motor')->get();
+        $selisih15 = ParkirModel::where('selisih' , '>=', 451)->where('jenis_kendaraan' , '=', 'motor')->get();
 
     	return view('laporan',['title' => $title,'selisih1'=>$selisih1,'selisih2'=>$selisih2,'selisih3'=>$selisih3,'selisih4'=>$selisih4,'selisih5'=>$selisih5,'selisih6'=>$selisih6,'selisih7'=>$selisih7,'selisih8'=>$selisih8,'selisih9'=>$selisih9,'selisih10'=>$selisih10,'selisih11'=>$selisih11,'selisih12'=>$selisih12,'selisih13'=>$selisih13,'selisih14'=>$selisih14,'selisih15'=>$selisih15]);
+    }
+    function laporan_motor_hasil(Request $request)
+    {
+        $title ='Laporan Motor '.'gedung'.' '.$request->gedung.' '.'hari'.' '.$request->hari;
+        $gedung = $request->gedung;
+        $hari = $request->hari;
+
+        $selisih1 = ParkirModel::whereBetween('selisih' , [0,30])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih2 = ParkirModel::whereBetween('selisih' , [31,60])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih3 = ParkirModel::whereBetween('selisih' , [61,90])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih4 = ParkirModel::whereBetween('selisih' , [91,120])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih5 = ParkirModel::whereBetween('selisih' , [121,150])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih6 = ParkirModel::whereBetween('selisih' , [151,180])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih7 = ParkirModel::whereBetween('selisih' , [181,220])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih8 = ParkirModel::whereBetween('selisih' , [221,250])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih9 = ParkirModel::whereBetween('selisih' , [251,280])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih10 = ParkirModel::whereBetween('selisih' , [281,320])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih11 = ParkirModel::whereBetween('selisih' , [321,350])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih12 = ParkirModel::whereBetween('selisih' , [351,380])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih13 = ParkirModel::whereBetween('selisih' , [381,420])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih14 = ParkirModel::whereBetween('selisih' , [421,450])->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih15 = ParkirModel::where('selisih' , '>=', 451)->where('jenis_kendaraan' , '=', 'motor')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+
+       // dd($selisih1);
+
+        return view('laporan',['title' => $title,'selisih1'=>$selisih1,'selisih2'=>$selisih2,'selisih3'=>$selisih3,'selisih4'=>$selisih4,'selisih5'=>$selisih5,'selisih6'=>$selisih6,'selisih7'=>$selisih7,'selisih8'=>$selisih8,'selisih9'=>$selisih9,'selisih10'=>$selisih10,'selisih11'=>$selisih11,'selisih12'=>$selisih12,'selisih13'=>$selisih13,'selisih14'=>$selisih14,'selisih15'=>$selisih15]);
+    }
+    function laporan_mobil()
+    {
+        $title ='Laporan Mobil';
+
+        $selisih1 = ParkirModel::whereBetween('selisih' , [0,30])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih2 = ParkirModel::whereBetween('selisih' , [31,60])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih3 = ParkirModel::whereBetween('selisih' , [61,90])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih4 = ParkirModel::whereBetween('selisih' , [91,120])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih5 = ParkirModel::whereBetween('selisih' , [121,150])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih6 = ParkirModel::whereBetween('selisih' , [151,180])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih7 = ParkirModel::whereBetween('selisih' , [181,220])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih8 = ParkirModel::whereBetween('selisih' , [221,250])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih9 = ParkirModel::whereBetween('selisih' , [251,280])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih10 = ParkirModel::whereBetween('selisih' , [281,320])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih11 = ParkirModel::whereBetween('selisih' , [321,350])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih12 = ParkirModel::whereBetween('selisih' , [351,380])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih13 = ParkirModel::whereBetween('selisih' , [381,420])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih14 = ParkirModel::whereBetween('selisih' , [421,450])->where('jenis_kendaraan' , '=', 'mobil')->get();
+        $selisih15 = ParkirModel::where('selisih' , '>=', 451)->where('jenis_kendaraan' , '=', 'mobil')->get();
+
+        return view('laporan2',['title' => $title,'selisih1'=>$selisih1,'selisih2'=>$selisih2,'selisih3'=>$selisih3,'selisih4'=>$selisih4,'selisih5'=>$selisih5,'selisih6'=>$selisih6,'selisih7'=>$selisih7,'selisih8'=>$selisih8,'selisih9'=>$selisih9,'selisih10'=>$selisih10,'selisih11'=>$selisih11,'selisih12'=>$selisih12,'selisih13'=>$selisih13,'selisih14'=>$selisih14,'selisih15'=>$selisih15]);
+    }
+    function laporan_mobil_hasil(Request $request)
+    {
+        $title ='Laporan Mobil '.'gedung'.' '.$request->gedung.' '.'hari'.' '.$request->hari;
+        $gedung = $request->gedung;
+        $hari = $request->hari;
+
+        $selisih1 = ParkirModel::whereBetween('selisih' , [0,30])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih2 = ParkirModel::whereBetween('selisih' , [31,60])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih3 = ParkirModel::whereBetween('selisih' , [61,90])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih4 = ParkirModel::whereBetween('selisih' , [91,120])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih5 = ParkirModel::whereBetween('selisih' , [121,150])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih6 = ParkirModel::whereBetween('selisih' , [151,180])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih7 = ParkirModel::whereBetween('selisih' , [181,220])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih8 = ParkirModel::whereBetween('selisih' , [221,250])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih9 = ParkirModel::whereBetween('selisih' , [251,280])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih10 = ParkirModel::whereBetween('selisih' , [281,320])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih11 = ParkirModel::whereBetween('selisih' , [321,350])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih12 = ParkirModel::whereBetween('selisih' , [351,380])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih13 = ParkirModel::whereBetween('selisih' , [381,420])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih14 = ParkirModel::whereBetween('selisih' , [421,450])->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+        $selisih15 = ParkirModel::where('selisih' , '>=', 451)->where('jenis_kendaraan' , '=', 'mobil')->where('gedung' , '=', $gedung)->where('hari' , '=', $hari)->get();
+
+      // dd($selisih1);
+
+        return view('laporan2',['title' => $title,'selisih1'=>$selisih1,'selisih2'=>$selisih2,'selisih3'=>$selisih3,'selisih4'=>$selisih4,'selisih5'=>$selisih5,'selisih6'=>$selisih6,'selisih7'=>$selisih7,'selisih8'=>$selisih8,'selisih9'=>$selisih9,'selisih10'=>$selisih10,'selisih11'=>$selisih11,'selisih12'=>$selisih12,'selisih13'=>$selisih13,'selisih14'=>$selisih14,'selisih15'=>$selisih15]);
     }
     
 }

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="form-group">
- <form class="form-horizontal form-label-left" method="post" action="/parkir/laporan/motor/hasil"> 
+ <form class="form-horizontal form-label-left" method="post" action="/parkir/laporan/mobil/hasil"> 
     <div class="col-md-3">
     	<div class="form-group">
           Gedung :
@@ -33,13 +33,11 @@
             {{ csrf_field() }}
     <div class="col-md-3">
     	<div class="form-group">
-       		<button type="submit" name="submit" class="btn btn-success btn-sm">Filter</button> <a href="/parkir/laporan/motor/" class="btn btn-info  btn-sm">Reset</a>
+       		<button type="submit" name="submit" class="btn btn-success btn-sm">Filter</button> <a href="/parkir/laporan/mobil/" class="btn btn-info  btn-sm">Reset</a>
    		</div>
     </div>
 
  </form>
-
-     
 
 <table id="tableparkir" class="table table-striped table-bordered">
 	<thead>
