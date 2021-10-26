@@ -46,7 +46,7 @@
         <div class="form-group">
           
           <label class="control-label" for="first-name">Jenis Kendaran <span class="required"></span>
-            <select name="j_kendaraan" class="form-control" id="exampleFormControlSelect1">
+            <select name="j_kendaraan" class="form-control" id="exampleFormControlSelect1" required>
               <option value="motor">--pilih---</option>
               <option value="motor">Motor</option>
               <option value="mobil">Mobil</option>
